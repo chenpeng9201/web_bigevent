@@ -12,4 +12,12 @@ $(function() {
         //隐藏注册界面
         $('.reg-box').hide();
     });
+
+    // 使用layui自定义表单验证
+    var form = layui.form;
+    form.verify({
+        pwd: [
+            /^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格'
+        ]
+    });
 });
