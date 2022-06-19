@@ -22,7 +22,7 @@
 
         <!-- 登录div -->
         <div class="login-box">
-            <form class="layui-form" action="">
+            <form id="form-login" class="layui-form" action="">
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-username"></i>
                     <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
@@ -44,7 +44,7 @@
 
         <!-- 注册div -->
         <div class="reg-box">
-            <form class="layui-form" action="">
+            <form id="form-reg" class="layui-form" action="">
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-username"></i>
                     <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
@@ -72,6 +72,8 @@
     <script src="/assets/lib/layui/layui.all.js"></script>
     <!-- 导入jQuery -->
     <script src="/assets/lib/jquery.js"></script>
+    <!-- 导入baseAPI -->
+    <script src="/assets/js/baseAPI.js"></script>
     <!-- 导入自定义js -->
     <script src="/assets/js/login.js"></script>
 </body>
