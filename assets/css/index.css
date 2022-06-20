@@ -26,8 +26,34 @@ iframe {
     overflow: hidden;
 }
 
+.userinfo {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 12px;
+    user-select: none;
+    /* background-color: blue; */
+}
 
-/* .userinfo {
+.layui-nav-img {
+    height: 40px;
+    width: 40px;
+}
+
+.layui-side-scroll .userinfo {
+    border-bottom: 2px solid yellowgreen;
+}
+
+.text-avatar {
+    display: inline-block;
+    border-radius: 50%;
     width: 40px;
     height: 40px;
-} */
+    background-color: skyblue;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+    top: 4px;
+    margin-right: 10px;
+}

@@ -53,7 +53,7 @@ $(function() {
             success: function(res) {
                 if (res.status === 0) {
                     // 将token存起来
-                    sessionStorage.setItem('token', res.token);
+                    localStorage.setItem('token', res.token);
                     // 跳转到index主页
                     location.href = '/index.html';
                 }
