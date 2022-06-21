@@ -6,23 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>大事件项目</title>
-    <link rel="stylesheet" href="assets/lib/layui/css/layui.css">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/fonts/iconfont.css">
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/fonts/iconfont.css">
 </head>
 
 <body>
     <div class="layui-layout layui-layout-admin">
         <div class="layui-header">
             <div class="layui-logo layui-hide-xs layui-bg-black">
-                <img src="./assets/images/logo.png" alt="" />
+                <img src="/assets/images/logo.png" alt="" />
             </div>
 
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item layui-hide layui-show-md-inline-block">
                     <a href="javascript:;">
-                        <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
-                        <span class="text-avatar">A</span>个人中心
+                        <img src="" class="layui-nav-img">
+                        <span class="text-avatar">&nbsp;</span>个人中心
                     </a>
                     <dl class="layui-nav-child">
                         <dd><a href=""><i class="layui-icon layui-icon-form"></i>基本资料</a></dd>
@@ -31,7 +31,7 @@
                     </dl>
                 </li>
                 <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-                    <a href="javascript:;">
+                    <a href="javascript:;" id="logout">
                         <span class="iconfont icon-tuichu"></span>退出
                     </a>
                 </li>
@@ -42,12 +42,12 @@
             <div class="layui-side-scroll">
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <div class="userinfo">
-                    <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
-                    <span class="text-avatar">A</span>
-                    <span id="welcome">欢迎 XXX</span>
+                    <img src="" class="layui-nav-img">
+                    <span class="text-avatar">&nbsp;</span>
+                    <span id="welcome"></span>
                 </div>
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all">
-                    <li class="layui-nav-item layui-this"><a href="home/dashboard.html" target="fm"><span class="iconfont icon-home"></span>首页</a></li>
+                    <li class="layui-nav-item layui-this"><a href="/home/dashboard.html" target="fm"><span class="iconfont icon-home"></span>首页</a></li>
                     <li class="layui-nav-item">
                         <a class="" href="javascript:;"><span class="iconfont icon-16"></span>文章管理</a>
                         <dl class="layui-nav-child">
@@ -71,7 +71,7 @@
 
         <div class="layui-body">
             <!-- 内容主体区域 -->
-            <iframe src="home/dashboard.html" frameborder="0" name="fm"></iframe>
+            <iframe src="/home/dashboard.html" frameborder="0" name="fm"></iframe>
         </div>
 
         <div class="layui-footer">
@@ -79,12 +79,12 @@
             坚持就是胜利！
         </div>
     </div>
-    <script src="./assets/lib/jquery.js"></script>
-    <script src="assets/lib/layui/layui.all.js"></script>
+    <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/lib/layui/layui.all.js"></script>
     <!-- 导入baseAPI -->
-    <script src="./assets/js/baseAPI.js"></script>
+    <script src="/assets/js/baseAPI.js"></script>
     <!-- 导入自定义js文件 -->
-    <script src="./assets/js/index.js"></script>
+    <script src="/assets/js/index.js"></script>
 </body>
 
 </html>
