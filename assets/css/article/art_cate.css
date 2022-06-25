@@ -17,3 +17,9 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+#form-add,
+#form-edit {
+    padding-top: 20px;
+    padding-left: 30px;
+}
