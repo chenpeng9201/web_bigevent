@@ -69,9 +69,8 @@ $(function() {
     // 绑定筛选表单提交事件
     $('#form-search').on('submit', function(e) {
         e.preventDefault();
-        alert(1);
-        var cate_id = $('name=cate_id').val();
-        var state = $('name=state').val();
+        var cate_id = $('[name=cate_id]').val();
+        var state = $('[name=state]').val();
         //注册筛选条件
         q.cate_id = cate_id;
         q.state = state;
