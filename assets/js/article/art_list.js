@@ -1,13 +1,14 @@
 $(function() {
     var q = {
         pagenum: 1, //页码值
-        pagesize: 5, //每页显示多少条数据
+        pagesize: 2, //每页显示多少条数据
         cate_id: '', //文章分类的 Id
         state: '' //文章的状态
     }
 
     var layer = layui.layer;
     var form = layui.form;
+    var laypage = layui.laypage;
     getArtList();
     getArtCateList();
     // 获取文章列表
@@ -24,6 +25,9 @@ $(function() {
                 // console.log(res);
                 var htmlStr = template('tpl-table', res);
                 $('tbody').html(htmlStr);
+
+                // 渲染分页
+                renderPage(res.total);
             }
         });
     }
@@ -78,5 +82,26 @@ $(function() {
         getArtList();
 
     });
+
+    // 分页方法
+    function renderPage(total) {
+        laypage.render({
+            elem: 'page', //注意，这里的 test1 是 ID，不用加 # 号
+            count: total, //数据总数，从服务端得到
+            limit: q.pagesize, //每页显示的条数
+            curr: q.pagenum, //当前页
+            jump: function(obj, first) {
+                    console.log(first);
+                    //obj包含了当前分页的所有参数，比如：
+                    q.pagenum = obj.curr; //得到当前页，以便向服务端请求对应页的数据。
+                    if (!first) {
+                        //重新发起请求
+                        getArtList();
+                    }
+
+                }
+                // layout: ['prev', 'page', 'next', 'limit']
+        });
+    }
 
 });
