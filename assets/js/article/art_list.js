@@ -1,7 +1,9 @@
 $(function() {
+    var pagenum = 1;
+    var pagesize = 2;
     var q = {
-        pagenum: 1, //页码值
-        pagesize: 2, //每页显示多少条数据
+        pagenum: pagenum, //页码值
+        pagesize: pagesize, //每页显示多少条数据
         cate_id: '', //文章分类的 Id
         state: '' //文章的状态
     }
@@ -79,6 +81,8 @@ $(function() {
         q.cate_id = cate_id;
         q.state = state;
         //重新获取文章列表
+        q.pagenum = pagenum;
+        q.pagesize = pagesize;
         getArtList();
 
     });
@@ -103,5 +107,32 @@ $(function() {
                 // layout: ['prev', 'page', 'next', 'limit']
         });
     }
+
+    //删除文章
+    $('tbody').on('click', '.btn-del', function() {
+        var id = $(this).attr('data-id');
+        var btnCount = $('.btn-del').length;
+        layer.confirm('确认删除吗?', { icon: 3, title: '提示' }, function(index) {
+            //发请求
+            $.ajax({
+                method: 'GET',
+                url: '/my/article/delete/' + id,
+                success: function(res) {
+                    if (res.status !== 0) {
+                        return layer.msg('删除文章失败！');
+                    }
+                    layer.msg('删除文章成功！');
+                    if (btnCount === 1) {
+                        //如果页面只剩1个按钮了，代表只有一条数据了，删除之后，页码要-1
+                        q.pagenum = q.pagenum === 1 ? 1 : q.pagenum - 1;
+                    }
+                    getArtList(); //重新渲染
+
+                }
+            });
+            layer.close(index);
+        });
+
+    });
 
 });
